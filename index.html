@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medical Engineering | Class Profiles - Year 1 Sem 2</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;500;600&display=swap');
+
+    :root {
+      --neon: #00ffea;
+      --bg: #7777ff;
+      --card-bg: #121822;
+      --text: #e0e0e0;
+      --accent: #ff00aa;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      padding: 20px 0;
+    }
+
+    /* Neon Title Bar */
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(90deg, #000428, #004e92);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(0, 255, 234, 0.5);
+    }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.8rem;
+      color: var(--neon);
+      text-shadow: 0 0 10px var(--neon), 0 0 20px var(--neon);
+      letter-spacing: 3px;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(45deg, transparent 30%, rgba(0,255,234,0.1) 50%, transparent 70%);
+      animation: shimmer 6s infinite;
+    }
+    @keyframes shimmer { 0%{transform:translateX(-100%)} 100%{transform:translateX(100%)} }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* Card */
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      transition: all 0.4s ease;
+      border: 1px solid rgba(0,255,234,0.2);
+    }
+    .card:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,255,234,0.3);
+      border-color: var(--neon);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--neon);
+    }
+
+    .info {
+      padding: 20px;
+    }
+    .info h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--neon);
+      text-shadow: 0 0 8px var(--neon);
+    }
+    .info p {
+      margin: 8px 0;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    .info .label {
+      color: var(--accent);
+      font-weight: 600;
+      margin-right: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background: #111aaa;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 50px;
+      color: #66ff06;
+      font-size: 1.2rem;
+    }
+    footer a {
+      color: var(--neon);
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Medical Engineering | Class Profiles - Year 1 Sem 2</h1>
+  </header>
+
+  <div class="grid" id="profilesGrid">
+    <!-- JavaScript will fill 27 cards here -->
+  </div>
+
+  <footer>
+    <p>Designed & Developed with 💙 by <a href="#" target="_blank">Tech Brian</a></p>
+    <p>© 2025 Medical Engineering Class Profiles. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const students = [
+      { name: "Aarav Sharma", reg: "MED/001/24", contact: "+254 712 345 601", email: "aarav.sharma@students.edu" },
+      { name: "Aditi Patel", reg: "MED/002/24", contact: "+254 712 345 602", email: "aditi.patel@students.edu" },
+      { name: "Arjun Singh", reg: "MED/003/24", contact: "+254 712 345 603", email: "arjun.singh@students.edu" },
+      { name: "Diya Mehta", reg: "MED/004/24", contact: "+254 712 345 604", email: "diya.mehta@students.edu" },
+      { name: "Ishan Gupta", reg: "MED/005/24", contact: "+254 712 345 605", email: "ishan.gupta@students.edu" },
+      { name: "Kiara Reddy", reg: "MED/006/24", contact: "+254 712 345 606", email: "kiara.reddy@students.edu" },
+      { name: "Rohan Kumar", reg: "MED/007/24", contact: "+254 712 345 607", email: "rohan.kumar@students.edu" },
+      { name: "Saanvi Nair", reg: "MED/008/24", contact: "+254 712 345 608", email: "saanvi.nair@students.edu" },
+      { name: "Vihaan Joshi", reg: "MED/009/24", contact: "+254 712 345 609", email: "vihaan.joshi@students.edu" },
+      { name: "Aanya Desai", reg: "MED/010/24", contact: "+254 712 345 610", email: "aanya.desai@students.edu" },
+      { name: "Reyansh Verma", reg: "MED/011/24", contact: "+254 712 345 611", email: "reyansh.verma@students.edu" },
+      { name: "Myra Kapoor", reg: "MED/012/24", contact: "+254 712 345 612", email: "myra.kapoor@students.edu" },
+      { name: "Aaradhya Singh", reg: "MED/013/24", contact: "+254 712 345 613", email: "aaradhya.singh@students.edu" },
+      { name: "Kabir Malhotra", reg: "MED/014/24", contact: "+254 712 345 614", email: "kabir.malhotra@students.edu" },
+      { name: "Zara Khan", reg: "MED/015/24", contact: "+254 712 345 615", email: "zara.khan@students.edu" },
+      { name: "Ayaan Bose", reg: "MED/016/24", contact: "+254 712 345 616", email: "ayaan.bose@students.edu" },
+      { name: "Ananya Roy", reg: "MED/017/24", contact: "+254 712 345 617", email: "ananya.roy@students.edu" },
+      { name: "Siddharth Iyer", reg: "MED/018/24", contact: "+254 712 345 618", email: "siddharth.iyer@students.edu" },
+      { name: "Riya Chatterjee", reg: "MED/019/24", contact: "+254 712 345 619", email: "riya.chatterjee@students.edu" },
+      { name: "Krishna Menon", reg: "MED/020/24", contact: "+254 712 345 620", email: "krishna.menon@students.edu" },
+      { name: "Ishaan Pillai", reg: "MED/021/24", contact: "+254 712 345 621", email: "ishaan.pillai@students.edu" },
+      { name: "Navya Srinivasan", reg: "MED/022/24", contact: "+254 712 345 622", email: "navya.srinivasan@students.edu" },
+      { name: "Arnav Banerjee", reg: "MED/023/24", contact: "+254 712 345 623", email: "arnav.banerjee@students.edu" },
+      { name: "Pari Yadav", reg: "MED/024/24", contact: "+254 712 345 624", email: "pari.yadav@students.edu" },
+      { name: "Shaurya Rao", reg: "MED/025/24", contact: "+254 712 345 625", email: "shaurya.rao@students.edu" },
+      { name: "Tara Fernandes", reg: "MED/026/24", contact: "+254 712 345 626", email: "tara.fernandes@students.edu" },
+      { name: "Yuvraj Thakur", reg: "MED/027/24", contact: "+254 712 345 627", email: "yuvraj.thakur@students.edu" }
+    ];
+
+    const grid = document.getElementById('profilesGrid');
+    const defaultPic = 'https://files.catbox.moe/d5zlzh.jpg';
+
+    students.forEach(student => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      card.innerHTML = `
+        <img src="${defaultPic}" alt="${student.name}">
+        <div class="info">
+          <h3>${student.name}</h3>
+          <p><span class="label">Reg No:</span> ${student.reg}</p>
+          <p><span class="label">Contact:</span> ${student.contact}</p>
+          <p><span class="label">Email:</span> ${student.email}</p>
+          <p><span class="label">Department:</span> Medical Engineering</p>
+          <p><span class="label">Semester:</span> Year 1 Sem 2</p>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
